@@ -1,0 +1,51 @@
+<header class="page-header">
+  <div
+    class="d-flex align-items-center justify-content-between pb-2 border-bottom"
+  >
+    <!-- Page Title -->
+    <h3 class="page-header__title">Page Title</h3>
+    <!-- End: Page Title -->
+
+    <!-- Page Action -->
+    <div class="page-header__action">
+      <!-- User Profile -->
+      <div class="dropdown">
+        <button
+          type="button"
+          title="User Name"
+          class="user-profile btn btn-link"
+        >
+          <img
+            src="assets/img/user.jpg"
+            alt="User Image"
+            class="user-profile__img"
+          />
+          <div class="d-flex align-items-center">
+            <span class="user-name me-1">User Name</span>
+            <span class="icon icon-expand_more"></span>
+          </div>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end p-0 mt-1 border-0 shadow">
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+      <!-- End: User Profile -->
+    </div>
+    <!-- End: Page Action -->
+  </div>
+
+  <!-- Page Toolbar -->
+  <div class="page-header__toolbar mt-2">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="my-2">
+      <ol class="breadcrumb mb-0">
+        <template>
+          <li class="breadcrumb-item" aria-current="page">Home</li>
+        </template>
+      </ol>
+    </nav>
+    <!-- End: Breadcrumb -->
+  </div>
+  <!-- End: Page Toolbar -->
+</header>

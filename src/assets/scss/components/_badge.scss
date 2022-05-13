@@ -1,0 +1,10 @@
+// Loop for generate custom badge variants
+@each $color, $value in $theme-colors {
+  .badge {
+    &.bg-#{$color} {
+      // Add !important to override Bootstrap style
+      background-color: lighten($value, $badge-bg-lighten-amount) !important;
+      color: darken($value, $badge-color-darken-amount);
+    }
+  }
+}

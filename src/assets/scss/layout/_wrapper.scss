@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+
+    &-main {
+      flex-grow: 1;
+      height: 100%;
+      overflow: hidden;
+      padding: $wrapper-content-padding-y $wrapper-content-padding-x;
+    }
+  }
+}

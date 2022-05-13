@@ -1,0 +1,127 @@
+.table {
+  > :not(:first-child) {
+    border-top: 0;
+  }
+
+  th,
+  td {
+    font-size: $font-size-base * 0.85;
+  }
+
+  th {
+    font-weight: $font-weight-bold;
+    color: $table-header-color;
+
+    .header-data {
+      position: relative;
+      text-decoration: none;
+      display: inline-block;
+      padding-right: $table-header-data-padding-right;
+      color: inherit;
+
+      &.asc {
+        .sort {
+          &::before {
+            color: $sort-icon-active-bg;
+          }
+        }
+      }
+
+      &.desc {
+        .sort {
+          &::after {
+            color: $sort-icon-active-bg;
+          }
+        }
+      }
+    }
+
+    // Table Column Sorting
+    .sort {
+      position: absolute;
+      top: -1px;
+      right: 0;
+      height: 100%;
+      width: $table-header-data-padding-right;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &::after,
+      &::before {
+        display: flex;
+        align-items: center;
+        height: 6px;
+        font-family: $icomoon-font-family;
+        font-size: $font-size-base;
+        color: $sort-icon-bg;
+      }
+      &::after {
+        content: $icon-arrow_drop_down;
+      }
+      &::before {
+        content: $icon-arrow_drop_up;
+      }
+    }
+  }
+
+  td {
+    color: $table-cell-color;
+    font-weight: $font-weight-medium;
+
+    .badge {
+      font-size: $font-size-base * 0.85;
+      min-width: 80px;
+    }
+  }
+
+  // Sticky Table Header
+  .sticky-table-header {
+    th {
+      background-color: $white;
+      position: sticky;
+      top: -1px;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Table Action Area
+  .table-action {
+    .btn-link {
+      font-size: $font-size-base * 1.2;
+      text-decoration: none;
+      color: $gray-600;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &:focus,
+      &:focus-within {
+        box-shadow: none;
+      }
+    }
+
+    .dropdown-menu {
+      font-size: $font-size-base * 0.85;
+
+      li {
+        &:not(:last-child) {
+          .dropdown-item {
+            border-bottom: 1px solid $border-color;
+          }
+        }
+      }
+    }
+  }
+}

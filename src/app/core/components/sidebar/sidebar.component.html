@@ -1,0 +1,28 @@
+<input
+  type="checkbox"
+  id="toggle-sidebar"
+  class="d-none"
+  (click)="toggleSidebar()"
+/>
+<aside class="sidebar">
+  <header
+    class="d-flex align-items-center justify-content-between py-2 px-3 flex-shrink-0"
+  >
+    <h2 class="logo-name m-0">
+      {{ !isMenuExpand ? "Admin." : "A." }}
+    </h2>
+    <label for="toggle-sidebar">
+      <span class="icon icon-menu"></span>
+    </label>
+  </header>
+  <nav class="flex-grow-1 h-100 overflow-auto">
+    <ul class="list-unstyled menu-list m-0 py-2">
+      <li class="menu-list__item" *ngFor="let menu of menuList">
+        <a [routerLink]="menu.to" routerLinkActive="active" class="menu-list__link">
+          <span class="menu-list__link-icon" [class]="menu.iconClass"></span>
+          <span class="menu-list__link-name">{{menu.name}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
