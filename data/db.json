@@ -1,0 +1,163 @@
+{
+  "tickets": [
+    {
+      "subject": "Ticket 1",
+      "assignee": "heny",
+      "requestedBy": "meera",
+      "priority": "high",
+      "status": "open",
+      "createdDate": "2022-04-01",
+      "dueDate": "2022-04-28",
+      "id": 1
+    },
+    {
+      "subject": "Ticket2",
+      "assignee": "meera",
+      "requestedBy": "heny",
+      "priority": "high",
+      "status": "closed",
+      "createdDate": "2022-04-14",
+      "dueDate": "2022-04-29",
+      "id": 2
+    },
+    {
+      "subject": "Ticket 3",
+      "assignee": "meera",
+      "requestedBy": "jisa",
+      "priority": "high",
+      "status": "closed",
+      "createdDate": "2022-04-01",
+      "dueDate": "2022-04-29",
+      "id": 3
+    },
+    {
+      "subject": "Tetsing",
+      "assignee": "heny",
+      "requestedBy": "meera",
+      "priority": "medium",
+      "status": "closed",
+      "createdDate": "2022-04-01",
+      "dueDate": "2022-04-14",
+      "id": 4
+    },
+    {
+      "subject": "Ticket 1",
+      "assignee": "meera",
+      "requestedBy": "jisa",
+      "priority": "high",
+      "status": "closed",
+      "createdDate": "2022-04-21",
+      "dueDate": "2022-04-29",
+      "id": 5
+    },
+    {
+      "subject": "Ticket 3",
+      "assignee": "riya",
+      "requestedBy": "jiya",
+      "priority": "medium",
+      "status": "open",
+      "createdDate": "2022-04-20",
+      "dueDate": "2022-04-27",
+      "id": 6
+    },
+    {
+      "subject": "Ticket 5",
+      "assignee": "riya",
+      "requestedBy": "meera",
+      "priority": "low",
+      "status": "open",
+      "createdDate": "2022-04-24",
+      "dueDate": "2022-04-30",
+      "id": 7
+    },
+    {
+      "subject": "Tetsing",
+      "assignee": "riya",
+      "requestedBy": "jiya",
+      "priority": "medium",
+      "status": "closed",
+      "createdDate": "2022-04-21",
+      "dueDate": "2022-04-22",
+      "id": 8
+    }
+  ],
+  "tasks": [
+    {
+      "taskName": "Task 5",
+      "taskDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "assignee": "heny",
+      "status": 2,
+      "category": 3,
+      "createdDate": "2022-5-8",
+      "createdBy": "riya",
+      "id": 5
+    },
+    {
+      "taskName": "Task 1",
+      "taskDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "assignee": "meera",
+      "status": 3,
+      "category": 4,
+      "createdDate": "2022-5-8",
+      "createdBy": "jiya",
+      "id": 8
+    },
+    {
+      "taskName": "Task 1",
+      "taskDesc": "test desc",
+      "assignee": "meera",
+      "status": 4,
+      "category": 3,
+      "createdDate": "2022-5-10",
+      "createdBy": "meera",
+      "id": 9
+    },
+    {
+      "taskName": "Task 12",
+      "taskDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "assignee": "jiya",
+      "status": 3,
+      "category": 2,
+      "createdDate": "2022-5-10",
+      "createdBy": "heny",
+      "id": 12
+    },
+    {
+      "taskName": "Task 14",
+      "taskDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "assignee": "jisa",
+      "status": 2,
+      "category": 4,
+      "createdDate": "2022-5-10",
+      "createdBy": "meera",
+      "id": 14
+    },
+    {
+      "taskName": "Task 11",
+      "taskDesc": "Testing",
+      "assignee": [
+        "heny",
+        "meera",
+        "riya"
+      ],
+      "status": 4,
+      "category": 2,
+      "createdDate": "2022-5-10",
+      "createdBy": "jisa",
+      "id": 16
+    },
+    {
+      "taskName": "Task 15",
+      "taskDesc": "test",
+      "assignee": [
+        "heny",
+        "riya"
+      ],
+      "status": 1,
+      "category": 3,
+      "createdDate": "2022-5-10",
+      "createdBy": "meera",
+      "id": 17
+    }
+  ]
+}

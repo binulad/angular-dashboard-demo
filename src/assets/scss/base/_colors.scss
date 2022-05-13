@@ -1,0 +1,55 @@
+$primary: #1d1d42;
+
+$white: #ffffff;
+$black: #000000;
+
+$gray: #6c757d;
+
+$body-bg: #f9f9f9;
+
+$min-contrast-ratio: 3;
+
+// Sidebar
+$sidebar-bg: $primary;
+
+// Menu List
+$menu-item-color: #bbbbc6;
+
+// Topbar
+$topbar-bg: $white;
+
+// Custom scrollbar
+$custom-scrollbar-thumb-color: lighten($gray, 10%);
+$custom-scrollbar-thumb-hover-color: lighten($gray, 5%);
+$custom-scrollbar-track-color: rgba($black, 0.06);
+
+$sidebar-scrollbar-thumb-color: darken($gray, 10%);
+$sidebar-scrollbar-thumb-hover-color: darken($gray, 5%);
+
+// Table
+$table-header-color: #9191a2;
+$table-cell-color: #030229;
+
+$sort-icon-bg:#a2a3ad;
+$sort-icon-active-bg:$black;
+
+// Badge
+$badge-bg-lighten-amount: 35%;
+$badge-color-darken-amount: 20%;
+
+// Form
+$input-bg: $white;
+
+// Task
+$task-header-color: $gray;
+$task-count-color: lighten($gray, 20%);
+
+$task-default-category-bg: $gray;
+
+$task-category: (
+  "research": #ec479a,
+  "planning": #189a8d,
+  "content":  #f59e0b,
+  "design":   #2663eb,
+  "default":    $gray
+)

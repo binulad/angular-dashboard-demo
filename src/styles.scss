@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Add Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+// Add Font-icons
+@import "assets/font-icons/style.scss";
+
+// Add Custom Base file
+@import "assets/scss/base/index";
+
+// Add Bootstrap Base File
+@import "assets/scss/vendor/bootstrap-base";
+
+// Add Bootstrap Components file
+@import "assets/scss/vendor/bootstrap-component";
+
+// Add Components file
+@import "assets/scss/components/index";
+
+// Add Layout file
+@import "assets/scss/layout/index";

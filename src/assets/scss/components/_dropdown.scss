@@ -1,0 +1,9 @@
+.dropdown {
+  &-menu {
+    &-end {
+      position: absolute;
+      right: 0;
+      top: 100%;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.card {
+  &.wrapper-card {
+    border: 0;
+    padding: calc(#{$card-spacer-y} / 2) $card-spacer-x;
+  }
+}
+
+// Ticket Info Cards
+.ticket-info {
+  border: 0;
+  box-shadow: $box-shadow-sm;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    border-radius: $border-radius-pill;
+
+    .icon {
+      font-size: $font-size-base * 1.5;
+    }
+
+    @each $color,
+      $value
+        in (
+          "info": $info,
+          "warning": $warning,
+          "success": $success,
+          "danger": $danger
+        )
+    {
+      &.#{$color} {
+        background-color: rgba($value, 0.2);
+        .icon {
+          color: $value;
+        }
+      }
+    }
+  }
+
+  &__number {
+    margin-bottom: 0.25rem;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $font-size-base * 0.85;
+    color: $text-muted;
+  }
+}

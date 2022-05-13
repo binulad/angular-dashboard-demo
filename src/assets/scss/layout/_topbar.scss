@@ -1,0 +1,34 @@
+.page-header {
+  flex-shrink: 0;
+  padding: $topbar-padding-y $topbar-padding-x;
+  background-color: $topbar-bg;
+
+  &__title {
+    font-size: $page-title-font-size;
+    margin: 0;
+  }
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+// User Profile
+.user-profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0;
+  &__img {
+    height: $user-img-size;
+    width: $user-img-size;
+    border-radius: $border-radius-pill;
+  }
+  .user-name {
+    margin-left: 0.5rem;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-muted;
+  }
+}
