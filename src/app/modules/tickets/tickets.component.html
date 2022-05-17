@@ -1,9 +1,2 @@
-<div class="d-flex flex-column h-100 overflow-hidden">
-  <!-- Ticket Info -->
-  <app-ticket-info></app-ticket-info>
-  <!-- End: Ticket Info -->
-
-  <!-- Ticket List -->
-  <app-ticket-list></app-ticket-list>
-  <!-- End: Ticket List -->
-</div>
+<app-ticket-list *ngIf="!isShowTicketForm" (editTicketData)="editTicketData($event)" (addTicketData)="addTicketData()"></app-ticket-list>
+<app-ticket-form *ngIf="isShowTicketForm" (cancelClick)="onCancelClick()" (ticketData)="onSubmitForm($event)"></app-ticket-form>

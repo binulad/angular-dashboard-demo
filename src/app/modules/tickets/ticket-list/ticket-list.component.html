@@ -1,72 +1,78 @@
-<div class="card border-0 h-100 shadow flex-grow-1 h-100 overflow-hidden">
-  <!-- Ticket List Presentation -->
-  <div class="overflow-hidden d-flex flex-column flex-grow-1 py-3">
-    <div class="overflow-auto rounded px-3">
-      <table
-        class="table position-relative mb-0"
-        aria-describedby="Ticket Listing"
-      >
-        <thead class="sticky-table-header">
-          <tr>
-            <th *ngFor="let item of columns" scope="col">
-              <a href="#" class="header-data" (click)="sortColumn(item.field)">
-                <span>{{ item.title }}</span>
-                <span *ngIf="item.sortable" class="sort"></span>
-              </a>
-            </th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of ticketList"> 
-            <td>{{ data.id }}</td>
-            <td>{{ data.subject }}</td>
-            <td>{{ data.requestedBy }}</td>
-            <td>{{ data.assignee }}</td>
-            <td>
-              <span
-                class="badge rounded-pill"
-                [ngClass]="getPriority(data.priority)"
-                >{{ data.priority | titlecase }}</span
+<!-- Table Action -->
+<app-table-action>
+  <button type="button" class="btn btn-primary" (click)="onClickAdd()">
+    Add Ticket
+  </button>
+</app-table-action>
+<!-- End: Table Action -->
+
+<!-- Ticket List Presentation -->
+<div class="overflow-hidden d-flex flex-column flex-grow-1 py-3">
+  <div class="overflow-auto rounded px-3">
+    <table
+      class="table position-relative mb-0"
+      aria-describedby="Ticket Listing"
+    >
+      <thead class="sticky-table-header">
+        <tr>
+          <th *ngFor="let item of columns" scope="col">
+            <a href="#" class="header-data" (click)="sortColumn(item.field)">
+              <span>{{ item.title }}</span>
+              <span *ngIf="item.sortable" class="sort"></span>
+            </a>
+          </th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of ticketList"> 
+          <td>{{ data.id }}</td>
+          <td>{{ data.subject }}</td>
+          <td>{{ data.requestedBy }}</td>
+          <td>{{ data.assignee }}</td>
+          <td>
+            <span
+              class="badge rounded-pill"
+              [ngClass]="getPriority(data.priority)"
+              >{{ data.priority | titlecase }}</span
+            >
+          </td>
+          <td>
+            <span
+              class="badge rounded-pill"
+              [ngClass]="getStatus(data.status)"
+              >{{ data.status | titlecase }}</span
+            >
+          </td>
+          <td>{{ data.createdDate }}</td>
+          <td>{{ data.dueDate }}</td>
+          <td class="table-action">
+            <div class="dropdown d-inline-block">
+              <button
+                class="btn btn-link d-flex align-items-center justify-content-center"
+                type="button"
+                title="More Action"
+                (click)="openDropdown(data.id)"
               >
-            </td>
-            <td>
-              <span
-                class="badge rounded-pill"
-                [ngClass]="getStatus(data.status)"
-                >{{ data.status | titlecase }}</span
-              >
-            </td>
-            <td>{{ data.createdDate }}</td>
-            <td>{{ data.dueDate }}</td>
-            <td class="table-action">
-              <div class="dropdown d-inline-block">
-                <button
-                  class="btn btn-link d-flex align-items-center justify-content-center"
-                  type="button"
-                  title="More Action"
-                  (click)="openDropdown(data.id)"
-                >
-                  <span class="icon icon-more_vert"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end border-0 shadow p-0" [ngClass]="{show : isShowDropdown && dropdownIndex == data.id}">
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      ><span class="icon icon-edit me-2"></span>Edit</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      ><span class="icon icon-delete me-2"></span>Delete</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+                <span class="icon icon-more_vert"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end border-0 shadow p-0" [ngClass]="{show : isShowDropdown && dropdownIndex == data.id}">
+                <li>
+                  <a class="dropdown-item" (click)="onEdit(data.id)"
+                    ><span class="icon icon-edit me-2"></span>Edit</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><span class="icon icon-delete me-2"></span>Delete</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <!-- End: Ticket List Presentation -->
 </div>
+<!-- End: Ticket List Presentation -->

@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Tickets } from '../tickets.model';
 import { TicketsService } from '../tickets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ticket-list',
   templateUrl: './ticket-list.component.html',
   styleUrls: ['./ticket-list.component.scss'],
+  host: {
+    class: 'card border-0 shadow h-100 flex-grow-1 h-100 overflow-hidden',
+  },
 })
 export class TicketListComponent implements OnInit {
+  @Output() editTicketData: EventEmitter<any> = new EventEmitter<any>();
+  @Output() addTicketData: EventEmitter<any> = new EventEmitter<any>();
+
   // Columns of the Tickets Listing
   columns: Array<any> = [
     {
@@ -62,7 +69,7 @@ export class TicketListComponent implements OnInit {
   // Sort Column
   sortBy: string = '';
 
-  constructor(private ticket: TicketsService) {
+  constructor(private ticket: TicketsService, private router: Router) {
     this.ticket.getTickets().subscribe((data) => {
       this.ticketList = JSON.parse(JSON.stringify(data));
     });
@@ -126,5 +133,15 @@ export class TicketListComponent implements OnInit {
         return 0;
       }
     });
+  }
+
+  // Method called while click on Edit button
+  onEdit(ticketId: any) {
+    this.editTicketData.emit(ticketId);
+  }
+
+  // MEthod called while click on Add button
+  onClickAdd() {
+    this.addTicketData.emit();
   }
 }

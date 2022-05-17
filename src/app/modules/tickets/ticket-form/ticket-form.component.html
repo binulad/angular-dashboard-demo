@@ -1,0 +1,101 @@
+<!-- Ticket Form Area -->
+<form [formGroup]="ticketForm" class="d-flex flex-column h-100 overflow-hidden" (ngSubmit)="onClickSave()">
+  <div class="flex-grow-1 h-100 overflow-auto p-3">
+    <div class="row">
+      <!-- Ticket Subject -->
+      <div class="col-lg-4 mb-3">
+        <label for="ticketSubject" class="form-label">Ticket Subject</label>
+        <input
+          name="subject"
+          id="ticketSubject"
+          type="text"
+          class="form-control"
+          placeholder="Enter Ticket Subject"
+          formControlName="subject"
+        />
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Ticket Subject -->
+
+      <!-- Assignee -->
+      <div class="col-lg-4 mb-3">
+        <label for="assignee" class="form-label">Assignee</label>
+        <select name="assignee" id="assignee" class="form-select" formControlName="assignee">
+          <option value="" selected>Select Assignee</option>
+        </select>
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Assignee -->
+
+      <!-- Requested By -->
+      <div class="col-lg-4 mb-3">
+        <label for="requestedBy" class="form-label">Requested By</label>
+        <select name="requestedBy" id="requestedBy" class="form-select" formControlName="requestedBy">
+          <option value="" selected>Select Requested By</option>
+        </select>
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Requested By -->
+
+      <!-- Ticket Priority -->
+      <div class="col-lg-4 mb-3">
+        <label for="priority" class="form-label">Ticket Priority</label>
+        <select name="priority" id="priority" class="form-select" formControlName="priority">
+          <option value="" selected>Select Ticket Priority</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Ticket Priority -->
+
+      <!-- Ticket Status -->
+      <div class="col-lg-4 mb-3">
+        <label for="status" class="form-label">Ticket Status</label>
+        <select name="status" id="status" class="form-select" formControlName="status">
+          <option value="" selected>Select Ticket Status</option>
+          <option value="open">Open</option>
+          <option value="closed">Closed</option>
+        </select>
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Ticket Status -->
+    </div>
+    <hr />
+    <div class="row">
+      <!-- Created Date -->
+      <div class="col-lg-4 mb-3">
+        <label for="createdDate" class="form-label">Created Date</label>
+        <input
+          type="date"
+          name="createdDate"
+          id="createdDate"
+          class="form-control"
+          formControlName="createdDate"
+        />
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Created Date -->
+
+      <!-- Due Date -->
+      <div class="col-lg-4 mb-3">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <input type="date" name="dueDate" id="dueDate" class="form-control" formControlName="dueDate" />
+        <div class="invalid-feedback d-block">This field is required</div>
+      </div>
+      <!-- End: Due Date -->
+    </div>
+  </div>
+  <!-- Form Action -->
+  <div
+    class="flex-shrink-0 d-flex align-items-center justify-content-between border-top p-3"
+  >
+    <button type="button" title="Cancel" class="btn btn-outline-secondary" (click)="onClickCancel()">
+      Cancel
+    </button>
+    <button type="submit" title="Save" class="btn btn-primary" >Save</button>
+  </div>
+  <!-- End: Form Action -->
+</form>
+<!-- End: Ticket Form Area -->
