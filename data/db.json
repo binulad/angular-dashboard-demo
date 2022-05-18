@@ -4,7 +4,7 @@
       "subject": "Ticket 1",
       "assignee": "heny",
       "requestedBy": "meera",
-      "priority": "high",
+      "priority": "medium",
       "status": "open",
       "createdDate": "2022-04-01",
       "dueDate": "2022-04-28",
@@ -15,7 +15,7 @@
       "assignee": "meera",
       "requestedBy": "heny",
       "priority": "high",
-      "status": "closed",
+      "status": "open",
       "createdDate": "2022-04-14",
       "dueDate": "2022-04-29",
       "id": 2
@@ -41,36 +41,6 @@
       "id": 4
     },
     {
-      "subject": "Ticket 1",
-      "assignee": "meera",
-      "requestedBy": "jisa",
-      "priority": "high",
-      "status": "closed",
-      "createdDate": "2022-04-21",
-      "dueDate": "2022-04-29",
-      "id": 5
-    },
-    {
-      "subject": "Ticket 3",
-      "assignee": "riya",
-      "requestedBy": "jiya",
-      "priority": "medium",
-      "status": "open",
-      "createdDate": "2022-04-20",
-      "dueDate": "2022-04-27",
-      "id": 6
-    },
-    {
-      "subject": "Ticket 5",
-      "assignee": "riya",
-      "requestedBy": "meera",
-      "priority": "low",
-      "status": "open",
-      "createdDate": "2022-04-24",
-      "dueDate": "2022-04-30",
-      "id": 7
-    },
-    {
       "subject": "Tetsing",
       "assignee": "riya",
       "requestedBy": "jiya",
@@ -79,6 +49,86 @@
       "createdDate": "2022-04-21",
       "dueDate": "2022-04-22",
       "id": 8
+    },
+    {
+      "subject": "Test",
+      "assignee": "heny",
+      "requestedBy": "meera",
+      "priority": "low",
+      "status": "open",
+      "createdDate": "2022-05-03",
+      "dueDate": "2022-05-04",
+      "id": 9
+    },
+    {
+      "subject": "Test",
+      "assignee": "jisa",
+      "requestedBy": "meera",
+      "priority": "medium",
+      "status": "open",
+      "createdDate": "2022-05-17",
+      "dueDate": "2022-05-18",
+      "id": 10
+    },
+    {
+      "subject": "Test",
+      "assignee": "heny",
+      "requestedBy": "meera",
+      "priority": "low",
+      "status": "closed",
+      "createdDate": "2022-05-04",
+      "dueDate": "2022-05-06",
+      "id": 11
+    },
+    {
+      "subject": "Ticket 1",
+      "assignee": "heny",
+      "requestedBy": "meera",
+      "priority": "medium",
+      "status": "open",
+      "createdDate": "2022-04-01",
+      "dueDate": "2022-04-28",
+      "id": 12
+    },
+    {
+      "subject": "Ticket 1",
+      "assignee": "heny",
+      "requestedBy": "meera",
+      "priority": "medium",
+      "status": "open",
+      "createdDate": "2022-04-01",
+      "dueDate": "2022-04-28",
+      "id": 13
+    },
+    {
+      "subject": "Ticket2",
+      "assignee": "meera",
+      "requestedBy": "heny",
+      "priority": "high",
+      "status": "closed",
+      "createdDate": "2022-04-14",
+      "dueDate": "2022-04-29",
+      "id": 14
+    },
+    {
+      "subject": "Ticket2",
+      "assignee": "meera",
+      "requestedBy": "heny",
+      "priority": "high",
+      "status": "closed",
+      "createdDate": "2022-04-14",
+      "dueDate": "2022-04-29",
+      "id": 15
+    },
+    {
+      "subject": "Testdata",
+      "assignee": "heny",
+      "requestedBy": "heny",
+      "priority": "high",
+      "status": "open",
+      "createdDate": "2022-05-04",
+      "dueDate": "2022-05-17",
+      "id": 16
     }
   ],
   "tasks": [

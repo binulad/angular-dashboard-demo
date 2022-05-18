@@ -1,7 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Tickets } from '../tickets.model';
-import { TicketsService } from '../tickets.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ticket-list',
@@ -12,8 +10,11 @@ import { Router } from '@angular/router';
   },
 })
 export class TicketListComponent implements OnInit {
+  @Input() ticketList: Tickets[];
+
   @Output() editTicketData: EventEmitter<any> = new EventEmitter<any>();
   @Output() addTicketData: EventEmitter<any> = new EventEmitter<any>();
+  @Output() deleteTicketData: EventEmitter<any> = new EventEmitter<any>();
 
   // Columns of the Tickets Listing
   columns: Array<any> = [
@@ -58,8 +59,6 @@ export class TicketListComponent implements OnInit {
       sortable: true,
     },
   ];
-  // Ticket Listing Data
-  ticketList: Tickets[] = [];
   // Dropdown status
   isShowDropdown: boolean = false;
   // Dropdown Index
@@ -69,11 +68,7 @@ export class TicketListComponent implements OnInit {
   // Sort Column
   sortBy: string = '';
 
-  constructor(private ticket: TicketsService, private router: Router) {
-    this.ticket.getTickets().subscribe((data) => {
-      this.ticketList = JSON.parse(JSON.stringify(data));
-    });
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 
@@ -143,5 +138,10 @@ export class TicketListComponent implements OnInit {
   // MEthod called while click on Add button
   onClickAdd() {
     this.addTicketData.emit();
+  }
+
+  // Method called while click on Delete Button
+  onDelete(ticketId: any) {
+    this.deleteTicketData.emit(ticketId);
   }
 }

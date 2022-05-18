@@ -1,2 +1,13 @@
-<app-ticket-list *ngIf="!isShowTicketForm" (editTicketData)="editTicketData($event)" (addTicketData)="addTicketData()"></app-ticket-list>
-<app-ticket-form *ngIf="isShowTicketForm" (cancelClick)="onCancelClick()" (ticketData)="onSubmitForm($event)"></app-ticket-form>
+<app-ticket-list
+  *ngIf="!isShowTicketForm"
+  [ticketList]="ticketList"
+  (editTicketData)="editTicketData($event)"
+  (addTicketData)="addTicketData()"
+  (deleteTicketData)="deleteTicketData($event)"
+></app-ticket-list>
+<app-ticket-form
+  *ngIf="isShowTicketForm"
+  [editData]="editTicket"
+  (cancelClick)="onCancelClick()"
+  (ticketData)="onSubmitForm($event)"
+></app-ticket-form>

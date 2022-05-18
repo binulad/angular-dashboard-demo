@@ -1,7 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
-import { AddUpdateTicket } from '../tickets.model';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { EditTicket, Tickets } from '../tickets.model';
 
 @Component({
   selector: 'app-ticket-form',
@@ -12,14 +17,70 @@ import { AddUpdateTicket } from '../tickets.model';
   },
 })
 export class TicketFormComponent implements OnInit {
+  @Input() editData: EditTicket[];
+
   @Output() ticketData: EventEmitter<any> = new EventEmitter<any>();
   @Output() cancelClick: EventEmitter<any> = new EventEmitter<any>();
+  @Output() updateTicket: EventEmitter<any> = new EventEmitter<any>();
 
-  ticketForm: AddUpdateTicket;
+  // Tickets Data Object
+  ticketForm: FormGroup;
 
-  constructor(private router: Router) {}
+  // Boolean Value for Form 
+  ticketFormSubmitted: boolean = false;
 
-  ngOnInit() {}
+  cloneTicketForm: Tickets[] = [];
+
+  //User List for Assignee and Requested By
+  userList: Array<any>;
+
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.ticketForm = this.formBuilder.group({
+      subject: new FormControl('', [Validators.required]),
+      assignee: new FormControl('', [Validators.required]),
+      requestedBy: new FormControl('', [Validators.required]),
+      priority: new FormControl('', [Validators.required]),
+      status: new FormControl('', [Validators.required]),
+      createdDate: new FormControl('', [Validators.required]),
+      dueDate: new FormControl('', [Validators.required]),
+    });
+
+    this.userList = [
+      {
+        name: 'Heny',
+        value: 'heny',
+      },
+      {
+        name: 'Meera',
+        value: 'meera',
+      },
+      {
+        name: 'Riya',
+        value: 'riya',
+      },
+      {
+        name: 'Jisa',
+        value: 'jisa',
+      },
+      {
+        name: 'Jiya',
+        value: 'jiya',
+      },
+    ];
+
+    if (this.editData) {
+      this.ticketForm.patchValue(this.editData);
+      this.cloneTicketForm = JSON.parse(JSON.stringify(this.editData));
+    }
+  }
+
+  get ticketFormControl(): any {
+    return this.ticketForm.controls;
+  }
+
+  
 
   // Method called while click on Cancel button
   onClickCancel() {
@@ -28,8 +89,14 @@ export class TicketFormComponent implements OnInit {
 
   // Method called while click on Save button
   onClickSave() {
-    console.log(this.ticketForm.value);
-    
-    // this.ticketData.emit();
+    this.ticketFormSubmitted = true;
+    if (
+      JSON.parse(JSON.stringify(this.ticketForm.value)) !==
+      JSON.parse(JSON.stringify(this.cloneTicketForm))
+    ) {
+      this.ticketData.emit(this.ticketForm.value);
+    } else {
+      this.cancelClick.emit();
+    }
   }
 }
